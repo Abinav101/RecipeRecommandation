@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Recommendation Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css">
+</head>
+<body class="background">
+<h1>Welcome to the Recipe Recommendation Dashboard</h1>
+<a href="/viewRecipes" class="button">View Recipes</a>
+
+<!-- Placeholder for displaying recipes -->
+<div th:if="${viewType == 'table'}">
+    <h2>Recommended Recipes</h2>
+    <table class="recipe-table">
+        <thead>
+        <tr>
+            <th>Recipe Name</th>
+            <th>Cuisine</th>
+            <th>Ingredients</th>
+            <th>Preparation Time</th>
+            <th>Cooking Time</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="recipeItem : ${recipeList}">
+            <td th:text="${recipeItem.name}"></td>
+            <td th:text="${recipeItem.cuisine}"></td>
+            <td th:text="${recipeItem.ingredients}"></td>
+            <td th:text="${recipeItem.prepTime}"></td>
+            <td th:text="${recipeItem.cookTime}"></td>
+            <td>
+                <button type="button" name="viewDetailsButton" th:value="${recipeItem.id}" th:text="View Details">View Details</button>
+                <button type="button" name="saveRecipeButton" th:value="${recipeItem.id}" th:text="Save Recipe">Save Recipe</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

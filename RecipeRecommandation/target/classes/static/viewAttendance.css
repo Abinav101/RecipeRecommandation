@@ -1,0 +1,41 @@
+/* viewAttendance.css */
+
+/* Apply styles to the entire body */
+body {
+    font-family: Arial, sans-serif; /* Use Arial font */
+    background-color: orange; /* Set background color */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Add padding to the body */
+}
+
+/* Style the h1 heading */
+h1 {
+    text-align: center; /* Center-align the heading */
+    margin-bottom: 20px; /* Add some space below the heading */
+    color: #333; /* Set text color */
+}
+
+/* Style the table */
+table {
+    width: 100%; /* Make the table fill the entire width */
+    border-collapse: collapse; /* Collapse borders */
+}
+
+/* Style table header cells */
+th {
+    background-color: #007bff; /* Set background color */
+    color: white; /* Set text color */
+    padding: 10px; /* Add padding */
+    text-align: left; /* Left-align text */
+}
+
+/* Style table body cells */
+td {
+    padding: 10px; /* Add padding */
+}
+
+/* Style table rows */
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternate row background color */
+}
+

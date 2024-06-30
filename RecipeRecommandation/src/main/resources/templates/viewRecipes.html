@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes Details</title>
+    <link rel="stylesheet" href="viewAttendance.css">
+</head>
+<body>
+<h1>Flight Details</h1></br>
+<form id="selectionForm" method="post" action="/bookFlight">
+<table border="1">
+    <thead>
+    <tr>
+        <th>Flight Name</th>
+        <th>Flight Number</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Date</th>
+        <th>Price</th>
+        <!-- Add more columns as needed -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="flightItem : ${flightList}">
+        <td th:text="${flightItem.Flightname}"></td>
+        <td th:text="${flightItem.Flightnumber}"></td>
+        <td th:text="${flightItem.FromCity}"></td>
+        <td th:text="${flightItem.ToCity}"></td>
+        <td th:text="${flightItem.Date}"></td>
+        <td th:text="${flightItem.Price}"></td>
+        <!-- Add more cells for additional columns -->
+        <td>
+            <button type="submit" name="selectedRowbutton1" th:value="${flightItem}" th:text="Book">Book Flight</button>
+        </td>
+        <td>
+            <button type="submit" name="selectedRowbutton2" th:value="${flightItem}" th:text="ViewDetails">View Details</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</form>
+<!--<form id="selectionForm" method="post" action="/bookFlight"> &lt;!&ndash; Form for booking flight &ndash;&gt;-->
+<!--    <ul>-->
+<!--        &lt;!&ndash; Loop through each flight item in flightList &ndash;&gt;-->
+<!--        <li th:each="flightItem : ${flightList}">-->
+<!--            <span>Flight Name: <span th:text="${flightItem.Flightname}"></span></span><br>-->
+<!--            <span>Flight Number: <span th:text="${flightItem.Flightnumber}"></span></span><br>-->
+<!--            <span>From: <span th:text="${flightItem.FromCity}"></span></span><br>-->
+<!--            <span>To: <span th:text="${flightItem.ToCity}"></span></span><br>-->
+<!--            <span>Date: <span th:text="${#dates.format(flightItem.Date, 'dd-MM-yyyy')}"></span></span><br>-->
+<!--            <span>Price: <span th:text="${flightItem.Price}"></span></span><br>-->
+<!--            &lt;!&ndash; Add more spans for additional fields &ndash;&gt;-->
+<!--            <button type="submit" name="selectedRowbutton" th:value="${flightItem.Flightnumber}" th:text="Book">Book Flight</button>-->
+<!--            <button type="submit" name="selectedRowbutton" th:value="${flightItem.Flightnumber}" th:text="Button2">Button2</button>-->
+<!--            <hr> &lt;!&ndash; Optional: Separator between flights &ndash;&gt;-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--</form>-->
+</body>
+</html>

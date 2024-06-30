@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css">
+</head>
+<body>
+<h1>Welcome to the Project Dashboard</h1>
+<!--<a href="/viewMovies" class="button">View Attendance</a>-->
+<!--<a href="/uploadMovies" class="button">View Attendance</a>-->
+<!--<a href="/viewFlights" class="button">View Flights</a>-->
+
+<a href="/AddFlights" class="button">Add Flights</a>
+<a href="/UpdateFlights" class="button">Update Flights</a>
+<a href="/DeleteFlights" class="button">Delete Flights</a>
+
+<!-- Placeholder for displaying flights -->
+<div th:if="${viewType == 'table'}">
+    <h2>Flight Details</h2>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Flight Name</th>
+            <th>Flight Number</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Date</th>
+            <th>Price</th>
+            <!-- Add more columns as needed -->
+            <th colspan="2">Actions</th> <!-- Colspan for buttons -->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="flightItem : ${flightList}">
+            <td th:text="${flightItem.Flightname}"></td>
+            <td th:text="${flightItem.Flightnumber}"></td>
+            <td th:text="${flightItem.FromCity}"></td>
+            <td th:text="${flightItem.ToCity}"></td>
+            <td th:text="${#dates.format(flightItem.Date, 'dd-MM-yyyy')}"></td>
+            <td th:text="${flightItem.Price}"></td>
+            <td>
+                <button type="submit" name="selectedRowbutton1" th:value="${flightItem.Flightnumber}" th:text="Book">Book Flight</button>
+            </td>
+            <td>
+                <button type="submit" name="selectedRowbutton2" th:value="${flightItem.Flightnumber}" th:text="ViewDetails">View Details</button>
+            </td>
+        </tr>
+        </tbody>
+        <style>
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    background-color: #f2f2f2;
+    color: #333;
+        </style>
+    </table>
+</div>
+
+</body>
+</html>

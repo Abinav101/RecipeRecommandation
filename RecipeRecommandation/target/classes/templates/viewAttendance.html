@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Details</title>
+    <link rel="stylesheet" href="viewAttendance.css">
+</head>
+<body>
+<h1>Attendance Details</h1></br>
+<table border="1">
+    <thead>
+    <tr>
+        <th>User Name</th>
+        <th>Subject</th>
+        <th>Attendance Percentage</th>
+        <!-- Add more columns as needed -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="dataItem : ${dataList}">
+        <td th:text="${dataItem.Username}"></td>
+        <td th:text="${dataItem.Subject}"></td>
+        <td th:text="${dataItem.Attendance}"></td>
+        <!-- Add more cells for additional columns -->
+    </tr>
+    </tbody>
+</table>
+<!--<ul>-->
+<!--    <li th:each="dataItem : ${dataList}">-->
+<!--        <span th:text="${dataItem.Username}"></span>-->
+<!--        <span th:text="${dataItem.Subject}"></span>-->
+<!--        <span th:text="${dataItem.Attendance}"></span>-->
+<!--    </li>-->
+<!--</ul>-->
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<head>
+<title>SignUp</title>
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+	<h1>Please enter the details</h1>
+	<div>
+	<form id="signup" action="/signup" method="post">
+		<div class="signup-form">
+		<label for="username">Enter UserName</label>
+		<input type="text" id="signupusername" name="signupusername" required>
+		</div>
+		<div class="signup-form">
+		<label for="userId">Enter UserId</label>
+		<input type="text" id="signupuserId" name="signupuserId"  required>
+		</div>
+		<div class="signup-form">
+		<label for="password">Enter Password</label>
+		<input type="password" id="signupuserpassword" name="signupuserpassword" required>
+		</div>
+		<div class="signup-form">
+		<label for="address">Enter Address</label>
+		<input type="text" id="signupuseraddress" name="signupuseraddress" required>
+		</div>
+		<button type="submit" id="createAccount">Create Account</button>
+		<p th:text="${message}"></p>
+	</form>
+	</div>
+	<script src="createaccount.js"></script>
+</body>

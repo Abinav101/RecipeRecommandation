@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Flight</title>
+    <link rel="stylesheet" href="updateFlight.css">
+</head>
+<body>
+<h1>Update Flight Details</h1>
+
+<form method="post" action="/updateFlight">
+    <input type="hidden" id="flightNumber" name="flightNumber" th:value="${flightNumber}" readonly><br>
+
+    <label for="flightName">Flight Name:</label><br>
+    <input type="text" id="flightName" name="flightName" th:value="${flightName}" required><br>
+
+    <label for="fromCity">From City:</label><br>
+    <input type="text" id="fromCity" name="fromCity" th:value="${fromCity}" required><br>
+
+    <label for="toCity">To City:</label><br>
+    <input type="text" id="toCity" name="toCity" th:value="${toCity}" required><br>
+
+    <label for="date">Date:</label><br>
+    <input type="date" id="date" name="date" th:value="${date}" required><br>
+
+    <label for="price">Price:</label><br>
+    <input type="number" id="price" name="price" th:value="${price}" required><br>
+
+    <button type="submit">Update Flight</button>
+</form>
+
+<a href="/viewFlights" class="button">Back to View Flights</a>
+</body>
+</html>

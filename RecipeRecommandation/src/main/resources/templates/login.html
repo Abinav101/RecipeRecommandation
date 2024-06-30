@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>login page</title>
+    <link rel="stylesheet" href="login.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<body>
+<div class="login">
+    <h2>LOGIN</h2>
+    <form id="login-form" action="/submit" method="post">
+        <div class="form-group">
+            <label for="userId">UserId:</label>
+            <input type="text" id="userId" name="userId" >
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" >
+        </div>
+        <button name="button" value="button1" type="submit" id="loginbutton" >Login</button>
+        <button name="button" value="button2" type="submit" id="signup">SignUp</button>
+    </form>
+</div>
+<script src="login.js"></script>
+</body>
+</html>

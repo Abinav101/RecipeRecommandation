@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+    h1,h2{
+    font-weight:bold;
+    color:red;
+    text-align:center;
+    }
+    body{
+    background-color:green;
+    background-image: url('flight_image.jpg');
+    background-size: cover;
+    background-position: center;
+    }
+</style>
+<h1 th:text="'The booked flight name is '+${flightnamevjdsnvjdsbj}"></h1>
+<h2 th:text="'Flight Number is ' +${flightnumber}"></h2>
+<script>
+    alert("The flight is booked!");
+</script>
+</body>
+</html>
